@@ -1,0 +1,32 @@
+{
+  "name": "clarity2smartweave_wasm",
+  "version": "1.0.0",
+  "description": "apt-get install clang-8 lld-8",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --compilers coffee:iced-coffee-script/register --require iced-coffee-coverage/register-istanbul test && istanbul report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vird/clarity2smartweave_wasm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vird/clarity2smartweave_wasm/issues"
+  },
+  "homepage": "https://github.com/vird/clarity2smartweave_wasm#readme",
+  "dependencies": {
+    "ast4gen": "github:hu2prod/ast4gen",
+    "fy": "github:hu2prod/fy",
+    "type": "github:hu2prod/type",
+    "wasm": "github:hu2prod/wasm"
+  },
+  "devDependencies": {
+    "iced-coffee-coverage": "^1.0.21",
+    "iced-coffee-script": "^108.0.14",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  }
+}

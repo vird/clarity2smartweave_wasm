@@ -1,0 +1,5 @@
+node_modules
+coverage
+
+build/compiled.js
+build/mod/index.*
