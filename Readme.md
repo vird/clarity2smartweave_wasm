@@ -10,7 +10,11 @@ VERY EXPERIMENTAL. Can compile only hello world for now. WIP
     # node install
     nvm i 12
     npm i -g iced-coffee-script
+    
     # we need clang-8
+    
+    # For ubuntu 20.04
+    apt-get update
     apt-get install clang-8 lld-8
 
 ## how to use
