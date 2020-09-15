@@ -11,6 +11,9 @@ if !argv._[0]
   p "default destination is ./build/compiled.js"
   process.exit()
 
+for k,v of argv
+  argv[k.replace(/-/g, "_")] = v
+
 code = fs.readFileSync argv._[0], "utf-8"
 ret_ast = parse code
 ret_ast = transform(ret_ast, {code})
@@ -89,12 +92,16 @@ for fn_decl_ast in ret_ast.list
     }
   """
 
+handle_str = "export async function handle"
+
+if argv.fix_export
+  handle_str = "this.handle = async function"
 
 code = """
 var utf8decoder = new TextDecoder("utf-8")
 const WASM_BUF = Buffer.from(#{JSON.stringify wasm_buf.toString 'base64'}, "base64");
 
-export async function handle (state, action) {
+#{handle_str} (state, action) {
   var memory;
   var wasm2string = function(s_pointer) {
     var iter, u8;

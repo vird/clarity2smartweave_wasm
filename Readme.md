@@ -30,7 +30,21 @@ VERY EXPERIMENTAL. Can compile only hello world for now. WIP
     ./cli.coffee test.clar
     # see ./build/compiled.js for results
 
-## Checklist/roadmap
+## how to test proper execution
+
+    # for some reason node@12 does't like `export async function handle`, so I use `this.handle = async function`
+    # enable this behaviour with --fix-export
+    ./cli.coffee test.clar --fix-export
+    ./manual3.coffee
+    # expected output
+    # { state: {}, result: 1 }
+
+# Development stuff
+
+    # run tests
+    npm test
+
+# Checklist/roadmap
 Note some points are duplicated. Reason: ast4gen has lot of stuff and it's a reasonable checklist for turing-complete stuff (clarity is not, but whatever) \
 Also I plan make superset of clarity for 2 purposes:
   * put all smartweave stuff in non-standard endpoints (so you can write in clarity whatever you want for arweave, because patching generated C or WASM is much more painful)
