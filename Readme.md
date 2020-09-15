@@ -91,7 +91,8 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;print                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;is-eq                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;stx-transfer?                 | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;tx-sender                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> | 
+| &nbsp;&nbsp;tx-sender                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;keccak256                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
 | **SmartWeave API sync**                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;SmartWeave.transaction        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
