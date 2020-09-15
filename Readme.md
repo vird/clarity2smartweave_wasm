@@ -11,11 +11,19 @@ VERY EXPERIMENTAL. Can compile only hello world for now. WIP
     nvm i 12
     npm i -g iced-coffee-script
     
-    # we need clang-8
+    # we need clang-8 and git
     
     # For ubuntu 20.04
     apt-get update
-    apt-get install clang-8 lld-8
+    apt-get install clang-8 lld-8 git
+    # fix missing wasm-ld binary
+    ln -s /usr/bin/wasm-ld-8 /usr/bin/wasm-ld
+
+## how to install
+
+    git clone https://github.com/vird/clarity2smartweave_wasm
+    cd clarity2smartweave_wasm
+    npm i
 
 ## how to use
 
