@@ -38,27 +38,6 @@ Also I plan make superset of clarity for 2 purposes:
 
 | Feature                                   | Implemented                    | Tested                         |
 | -------------                             | -------------                  | -------------                  |
-| **expr AST**                              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Un_op                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Bin_op                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;+ - * /           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;mod pow           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;< > <= >=         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;and or xor not    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;== !=             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Const                     | <ul><li>- [ ] partial&nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Var                       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-|                                           |                                |                                |
-| **stmt AST**                              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Fn_decl                   | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Ret                       | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Fn_call                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Var_decl (global, define-read-only)   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Var_decl (local, let)     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-|                                           |                                |                                |
-| **stmt AST control flow**                 | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.If                        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-|                                           |                                |                                |
 | **Clarity API**                           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;**operations**                | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;+ - * /           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -170,6 +149,32 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;SmartWeave.arweave.ar         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;SmartWeave.arweave.wallets    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;SmartWeave.contracts          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+
+ast4gen perspective checklist
+
+| Feature                                   | Implemented                    | Tested                         |
+| -------------                             | -------------                  | -------------                  |
+|                                           |                                |                                |
+| **expr AST**                              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Un_op                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Bin_op                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;+ - * /           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;mod pow           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;< > <= >=         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;and or xor not    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;== !=             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Const                     | <ul><li>- [ ] partial&nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Var                       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+|                                           |                                |                                |
+| **stmt AST**                              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Fn_decl                   | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Ret                       | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Fn_call                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Var_decl (global, define-read-only)   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Var_decl (local, let)     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+|                                           |                                |                                |
+| **stmt AST control flow**                 | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.If                        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
 | **Types**                                 | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;bool                          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -184,6 +189,3 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;optional                      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;response ok-type err-type     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
-
-
-
