@@ -88,9 +88,7 @@ for fn_decl_ast in ret_ast.list
 
 
 code = """
-// no access
-// var util = require("util")
-// var utf8decoder = new util.TextDecoder "utf-8"
+var utf8decoder = new TextDecoder("utf-8")
 const WASM_BUF = Buffer.from(#{JSON.stringify wasm_buf.toString 'base64'}, "base64");
 
 export async function handle (state, action) {
@@ -105,11 +103,7 @@ export async function handle (state, action) {
       iter++;
     }
     if (iter !== s_pointer) {
-      // no access -> no utf8 support yet
-      // return utf8decoder.decode(u8.subarray(s_pointer, iter));
-      var char_list = [];
-      u8.forEach(function(code){char_list.push(String.fromCharCode(code))});
-      return char_list.join("");
+      return utf8decoder.decode(u8.subarray(s_pointer, iter));
     } else {
       return "";
     }
