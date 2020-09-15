@@ -43,6 +43,7 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;ast.Bin_op                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;+ - *             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;mod               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;and or            | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Const                     | <ul><li>- [ ] partial&nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Var                       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
