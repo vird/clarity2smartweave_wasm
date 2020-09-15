@@ -3,3 +3,4 @@ coverage
 
 build/compiled.js
 build/mod/index.*
+priv_test.clar

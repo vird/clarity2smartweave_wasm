@@ -12,6 +12,16 @@ module.exports = (root, ctx)->
     when "Var", "Const"
       root
     
+    when "Bin_op"
+      root.a = walk root.a, ctx
+      root.b = walk root.b, ctx
+      root
+    
+    when "Ret"
+      if root.t?
+        root.t = walk root.t, ctx
+      root
+    
     # TODO OP
     
     when "Fn_call"

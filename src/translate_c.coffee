@@ -1,6 +1,27 @@
 module = @
 require "fy/codegen"
 
+@bin_op_name_map =
+  ADD : "+"
+  SUB : "-"
+  MUL : "*"
+  DIV : "/"
+  MOD : "%"
+  
+  EQ  : "="
+  NE  : "!="
+  GT  : ">"
+  LT  : "<"
+  GTE : ">="
+  LTE : "<="
+  # POW : "LIGO_IMPLEMENT_ME_PLEASE_POW"
+  
+  BOOL_AND: "and"
+  BOOL_OR : "or"
+
+# @bin_op_name_cb_map = {}
+
+# ###################################################################################################
 class @Gen_context
   
   mk_nest : ()->
@@ -23,7 +44,12 @@ translate_type = (type, ctx)->
       "char*"
     
     when "int"
-      "i32"
+      # WASM error
+      # wasm function signature contains illegal type
+      if ctx.is_arg
+        "i32"
+      else
+        "i64"
     # ###################################################################################################
     #    collections
     # ###################################################################################################
@@ -65,6 +91,16 @@ walk = (root, ctx)->
     
     when "Var"
       translate_var_name root.name, ctx
+    
+    when "Bin_op"
+      _a = walk root.a, ctx
+      _b = walk root.b, ctx
+      ret = if op = module.bin_op_name_map[root.op]
+        "(#{_a} #{op} #{_b})"
+      # else if cb = module.bin_op_name_cb_map[root.op]
+        # cb(_a, _b, ctx, root)
+      else
+        throw new Error "Unknown/unimplemented bin_op #{root.op}"
     # ###################################################################################################
     #    stmt
     # ###################################################################################################
@@ -80,11 +116,14 @@ walk = (root, ctx)->
       
       ctx_tmp = ctx_nest.mk_nest()
       ctx_tmp.allow_void = true
+      ctx_tmp.is_arg = true
       ret_type = translate_type root.type.nest_list[0], ctx_tmp
       
       arg_list = []
       for v, idx in root.arg_name_list
-        type = translate_type root.type.nest_list[idx+1], ctx_nest
+        ctx_tmp = ctx_nest.mk_nest()
+        ctx_tmp.is_arg = true
+        type = translate_type root.type.nest_list[idx+1], ctx_tmp
         arg_list.push "#{type} #{v}"
       
       scope = walk root.scope, ctx_nest

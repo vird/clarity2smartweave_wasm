@@ -6,7 +6,7 @@ Type = require "type"
 walk = (root, ctx)->
   switch root.constructor.name
     when "Fn_call"
-      if root.name == "ok"
+      if root.fn?.name == "ok"
         ret = new ast.Ret
         if root.arg_list.length == 0
           "skip"

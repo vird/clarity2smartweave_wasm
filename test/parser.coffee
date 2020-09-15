@@ -9,3 +9,30 @@ describe "parser section", ()->
     """
     parse str
   
+  describe "throws (pretty errors)", ()->
+    it '(print "HelloWorld!"', ()->
+      try
+        parse """
+          (print "HelloWorld!"
+        """
+      catch err
+        assert.strictEqual err.message, """
+          PARSE ERROR. Expected close_bracket
+          
+          code:
+           1:(print "HelloWorld!"
+                                 ^
+          """
+    it '("HelloWorld!")', ()->
+      try
+        parse """
+          ("HelloWorld!")
+        """
+      catch err
+        assert.strictEqual err.message, """
+          PARSE ERROR. Expected identifier
+          
+          code:
+           1:("HelloWorld!")
+              ^
+          """

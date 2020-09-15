@@ -1,11 +1,31 @@
 module = @
 
+# ###################################################################################################
 # STUB
 config = 
   bytes_type_map : {}
+  any_int_type_list: ["int"]
   any_int_type_map :
     int : true
+# ###################################################################################################
+@bin_op_ret_type_map_list = {
+  BOOL_AND: [["bool", "bool", "bool"]]
+  BOOL_OR : [["bool", "bool", "bool"]]
+  BOOL_XOR: [["bool", "bool", "bool"]]
+}
 
+for v in "ADD SUB MUL DIV MOD POW".split  /\s+/g
+  @bin_op_ret_type_map_list[v] = []
+# ###################################################################################################
+#    numeric operation type table
+# ###################################################################################################
+do ()=>
+  for op in "ADD SUB MUL DIV MOD POW".split  /\s+/g
+    list = @bin_op_ret_type_map_list[op]
+    for type in config.any_int_type_list
+      list.push [type, type, type]
+  
+# ###################################################################################################
 class @Ti_context
   parent    : null
   parent_fn : null
@@ -18,6 +38,11 @@ class @Ti_context
   
   constructor:()->
     @var_map = {} # TODO default_var_map_gen
+  
+  change_count_inc : ()->
+    @change_count++
+    @parent?.change_count_inc()
+    return
   
   mk_nest : ()->
     ret = new Ti_context
@@ -45,13 +70,13 @@ is_composite_type = (type)->
 
 @type_spread_left = (a_type, b_type, ctx)->
   return a_type if b_type.main == "_"
-  if a_type.main = "_" and b_type.main != "_"
+  if a_type.main == "_" and b_type.main != "_"
     a_type = b_type.clone()
-    ctx.change_count++
+    ctx.change_count_inc()
   else if a_type.main == "number"
     if b_type.main in ["unsigned_number", "signed_number"]
       a_type = b_type.clone()
-      ctx.change_count++
+      ctx.change_count_inc()
     else if b_type.main == "number"
       "nothing"
     else
@@ -63,7 +88,7 @@ is_composite_type = (type)->
     else
       throw new Error "unknown is_not_defined_type spread case"
     a_type = b_type.clone()
-    ctx.change_count++
+    ctx.change_count_inc()
   else if !@is_not_defined_type(a_type) and @is_not_defined_type(b_type)
     # will check, but not spread
     if b_type.main in ["number", "unsigned_number", "signed_number"]

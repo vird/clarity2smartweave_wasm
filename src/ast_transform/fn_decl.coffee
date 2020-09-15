@@ -6,14 +6,14 @@ Type = require "type"
 walk = (root, ctx)->
   switch root.constructor.name
     when "Fn_call"
-      if root.name == "define-public"
+      if root.fn?.name == "define-public"
         ret = new ast.Fn_decl
         if !(root.arg_list[0] instanceof ast.Fn_call)
           ast.pretty_node_error root.arg_list[0], ctx.code, "fn name should be identifier"
         
         # ret_type, arg_type0, arg_type1, arg_typeN
         ret.type = new Type "function<_>"
-        ret.name = root.arg_list[0].name
+        ret.name = root.arg_list[0].fn?.name
         
         
         for v, idx in root.arg_list[0].arg_list
@@ -34,7 +34,7 @@ walk = (root, ctx)->
             ast.pretty_node_error v, ctx.code, "fn decl argument should be tuple (name type). Bad type. #{err.message}"
           
           ret.type.nest_list[idx+1] = type
-          ret.arg_name_list.push v.name
+          ret.arg_name_list.push v.fn?.name
         
         
         for v, idx in root.arg_list

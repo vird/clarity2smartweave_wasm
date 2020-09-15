@@ -9,3 +9,11 @@ obj_set module, require "ast4gen"
   
   perr node
   throw new Error msg
+
+class @Op
+  op      : null
+  t_list  : []
+  
+  constructor:()->
+    @t_list = []
+  

@@ -14,6 +14,27 @@ ti = require "./common"
     when "Const"
       root.type
     
+    when "Bin_op"
+      ctx.walk root.a, ctx
+      ctx.walk root.b, ctx
+      
+      switch root.op
+        when "ASSIGN"
+          root.a.type = ti.type_spread_left root.a.type, root.b.type, ctx
+          root.b.type = ti.type_spread_left root.b.type, root.a.type, ctx
+          
+          root.type = ti.type_spread_left root.type, root.a.type, ctx
+          root.a.type = ti.type_spread_left root.a.type, root.type, ctx
+          root.b.type = ti.type_spread_left root.b.type, root.type, ctx
+        
+        when "EQ", "NE", "GT", "GTE", "LT", "LTE"
+          root.type   = ti.type_spread_left root.type,   new Type("bool"), ctx
+          root.a.type = ti.type_spread_left root.a.type, root.b.type, ctx
+          root.b.type = ti.type_spread_left root.b.type, root.a.type, ctx
+      
+      # bruteforce only at stage 2
+      
+      root.type
     # ###################################################################################################
     #    stmt
     # ###################################################################################################

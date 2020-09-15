@@ -38,8 +38,8 @@ class @Parser_context
     if reg_ret = reg_exp.exec @str
       @str = @str.substr reg_ret[0].length
       return reg_ret
-    # if @allow_throw_on_failure and !optional
-    #   @pos_error "PARSE ERROR. Expected #{name}"
+    if @allow_throw_on_failure and !optional
+      @pos_error "PARSE ERROR. Expected #{name}"
     null
   
   space : ()->
@@ -54,6 +54,8 @@ class @Parser_context
   bra_cl : ()->
     @regex /^\)[\s\n]*/, "close_bracket"
   
+  op : ()->
+    @regex /^[-+*\/]/i, "op"
   # ###################################################################################################
   #    L1 (returns AST)
   # ###################################################################################################
@@ -70,6 +72,13 @@ class @Parser_context
     @str = backup_str
     @_start_offset_list.pop()
     return
+  
+  fail_wrap : (cb)->
+    old_val = @allow_throw_on_failure
+    @allow_throw_on_failure = true
+    ast_node = cb()
+    @allow_throw_on_failure = old_val
+    ast_node
   
   identifier : ()->
     @ast_pos_wrap ()=>
@@ -91,6 +100,21 @@ class @Parser_context
         return ret
       null
   
+  integer : ()->
+    @ast_pos_wrap ()=>
+      if reg_ret = @regex /^-?\d+/, "integer"
+        ret = new ast.Const
+        if reg_ret[0] == "-"
+          # ret.type = new Type "number"
+          ret.type = new Type "uint"
+        else
+          # ret.type = new Type "signed_number"
+          ret.type = new Type "int"
+        # DANGER
+        ret.val = JSON.parse reg_ret[0]
+        return ret
+      null
+  
   # ###################################################################################################
   #    L2 (sometimes can call L3 for expr, scope)
   # ###################################################################################################
@@ -99,7 +123,10 @@ class @Parser_context
       
       return null if !@bra_op()
       
-      return null if !var_ast = @identifier()
+      if ret_opt = @op()
+        op_name = ret_opt[0]
+      else
+        fn_name_var_ast = @fail_wrap ()=>@identifier()
       @space()
       
       arg_list = []
@@ -108,46 +135,17 @@ class @Parser_context
         break if !expr = @expr()
         arg_list.push expr
       
-      return null if !@bra_cl()
+      @fail_wrap ()=>@bra_cl()
       
-      ret = new ast.Fn_call
-      ret.name = var_ast.name
-      ret.arg_list = arg_list
+      if fn_name_var_ast?
+        ret = new ast.Fn_call
+        ret.fn = fn_name_var_ast
+        ret.arg_list = arg_list
+      else
+        ret = new ast.Op
+        ret.op = op_name
+        ret.t_list = arg_list
       ret
-  
-  # bra_fn_decl : ()->
-  #   @ast_pos_wrap ()=>
-  #     return null if !@bra_op()
-  #     
-  #     return null if !@regex /^define-public/
-  #     @space()
-  #     
-  #     return null if !@bra_op()
-  #     # ###################################################################################################
-  #     #    arg list
-  #     # ###################################################################################################
-  #     arg_list = []
-  #     return null if !@bra_op()
-  #     return null if !fn_name_var_ast = @identifier()
-  #     @space()
-  #     
-  #     loop
-  #       break if !arg_name_var_ast = @identifier()
-  #       break if !arg_type_var_ast = @identifier()
-  #       arg_list.push arg_var_ast
-  #     
-  #     return null if !@bra_cl()
-  #     # ###################################################################################################
-  #     
-  #     return null if !scope = @scope()
-  #     
-  #     return null if !@bra_cl()
-  #     
-  #     ret = new ast.Fn_decl
-  #     ret.name = fn_name_var_ast.name
-  #     ret.arg_name_list = arg_list.map (t)->t.name
-  #     ret.scope = scope
-  #     ret
   
   # ###################################################################################################
   #    L3
@@ -165,6 +163,10 @@ class @Parser_context
         return ret
       
       if ret = @string()
+        @space_opt()
+        return ret
+      
+      if ret = @integer()
         @space_opt()
         return ret
       
@@ -199,7 +201,7 @@ class @Parser_context
     
     # prev
     passed_line_list = passed_str.split("\n")
-    passed_last_str = passed_line_list.last()
+    passed_last_str = passed_line_list.pop()
     line_offset = passed_last_str.length+1
     
     # next
@@ -210,6 +212,17 @@ class @Parser_context
     
     cursor = "^".rjust line_offset
     next_line_list.insert_after 0, cursor
+    if last2 = passed_line_list.pop()
+      next_line_list.unshift last2
+    
+    # set line numbers:
+    line_number = passed_line_list.length+1
+    pad = line_number.toString().length+1
+    for v,idx in next_line_list
+      if /^\s*\^\s*$/.test v
+        next_line_list[idx] = "#{' '.rjust pad} #{v}"
+      else
+        next_line_list[idx] = "#{(line_number++).rjust pad}:#{v}"
     code = next_line_list.join '\n'
     
     
