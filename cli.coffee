@@ -78,11 +78,14 @@ for fn_decl_ast in ret_ast.list
     if (action.input.function === #{JSON.stringify fn_decl_ast.name}) {
       var tmp_val;
       #{join_list arg_check_jl, '  '}
-      var ret = instance.instance.exports.#{fn_name}(#{arg_list.join ', '})
-      // what to do with ret?
-      console.log(ret);
+      var result = instance.instance.exports.#{fn_name}(#{arg_list.join ', '})
       
-      return { state }
+      if (result) {
+        return { state, result } // I don't know is that correct or not
+        // return { result } // probably this is correct
+      } else {
+        return { state }
+      }
     }
   """
 
