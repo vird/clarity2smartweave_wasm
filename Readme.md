@@ -64,6 +64,7 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;&nbsp;&nbsp;asserts!          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
 | &nbsp;&nbsp;**type-related**              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;ok                | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;try!              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;default-to        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> | 
 | &nbsp;&nbsp;&nbsp;&nbsp;is-ok is-none is-err is-some  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
