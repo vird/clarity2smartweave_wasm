@@ -183,7 +183,7 @@ ast4gen perspective checklist
 | &nbsp;&nbsp;principal                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;list                          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;tuple                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;int as i64                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;int as i64                    | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;uint as u64                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;int/uint as i128/u128         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;buffer                        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
