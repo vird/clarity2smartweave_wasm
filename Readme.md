@@ -54,7 +54,8 @@ Also I plan make superset of clarity for 2 purposes:
 | -------------                             | -------------                  | -------------                  |
 | **Clarity API**                           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;**operations**                | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;+ - * /           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;un -              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;bin + - * /       | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [x] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;mod pow           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;to-int to-uint    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;< > <= >=         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -78,7 +79,7 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;&nbsp;&nbsp;asserts!          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
 | &nbsp;&nbsp;**type-related**              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;ok                | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;ok                | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [x] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;try!              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;default-to        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> | 
 | &nbsp;&nbsp;&nbsp;&nbsp;is-ok is-none is-err is-some  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -173,7 +174,7 @@ ast4gen perspective checklist
 | **expr AST**                              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Un_op                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Bin_op                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;&nbsp;&nbsp;+ - * /           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;+ - * /           | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [x] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;mod pow           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;< > <= >=         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;and or xor not    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -182,7 +183,7 @@ ast4gen perspective checklist
 | &nbsp;&nbsp;ast.Var                       | <ul><li>- [ ] only for args&nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
 | **stmt AST**                              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;ast.Fn_decl                   | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;ast.Fn_decl                   | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [x] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Ret                       | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Fn_call                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;ast.Var_decl (global, define-read-only)   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -197,8 +198,9 @@ ast4gen perspective checklist
 | &nbsp;&nbsp;principal                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;list                          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;tuple                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;int as i64                    | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;uint as u64                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;int as i32                    | <ul><li>- [x] &nbsp;</li></ul> | <ul><li>- [x] &nbsp;</li></ul> |
+| &nbsp;&nbsp;uint as u32                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;int/uint as i64               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;int/uint as i128/u128         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;buffer                        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;optional                      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
