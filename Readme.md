@@ -95,44 +95,13 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;&nbsp;&nbsp;unwrap-panic      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;unwrap-err-panic  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
-| &nbsp;&nbsp;filter                        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;map                           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;fold                          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;append-item                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;contract-call?                | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;response                      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;err                           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;var-get                       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;var-set                       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;?? transfer-to-recipient!     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;?? transfer-from?             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-|                                           |                                |                                |
-| &nbsp;&nbsp;match                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;print                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;stx-transfer?                 | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;tx-sender                     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;contract-caller               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;block-height                  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;none                          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;true/false                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;let                           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;concat                        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;as-max-len?                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;len                           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;begin                         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;**crypto**                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;hash160           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;sha256            | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;sha512            | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;sha256            | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;keccak256         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;as-contract                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;contract-of                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;at-block                      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;get-block-info?               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;asserts!                      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;try!                          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;is-ok is-none is-err is-some  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+|                                           |                                |                                |
 | &nbsp;&nbsp;**tx related**                | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;ft-get-balance    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;nft-get-owner?    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
@@ -143,7 +112,41 @@ Also I plan make superset of clarity for 2 purposes:
 | &nbsp;&nbsp;&nbsp;&nbsp;stx-get-balance   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;stx-transfer?     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;&nbsp;&nbsp;stx-burn?         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
-| &nbsp;&nbsp;default-to                    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |     
+|                                           |                                |                                |
+| &nbsp;&nbsp;**unsorted**                  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;default-to        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> | 
+| &nbsp;&nbsp;&nbsp;&nbsp;as-contract       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;contract-of       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;at-block          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;get-block-info?   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;asserts!          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;try!              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;is-ok is-none is-err is-some  | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |    
+| &nbsp;&nbsp;&nbsp;&nbsp;match             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;print             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;tx-sender         | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;contract-caller   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;block-height      | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;none              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;true/false        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;let               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;concat            | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;as-max-len?       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;len               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;begin             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;filter            | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;map               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;fold              | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;append-item       | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;contract-call?    | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;response          | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;err               | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;var-get           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;&nbsp;&nbsp;var-set           | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+|                                           |                                |                                |
+| &nbsp;&nbsp;**unknown**                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;?? transfer-to-recipient!     | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
+| &nbsp;&nbsp;?? transfer-from?             | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 |                                           |                                |                                |
 | **SmartWeave API sync**                   | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
 | &nbsp;&nbsp;SmartWeave.transaction        | <ul><li>- [ ] &nbsp;</li></ul> | <ul><li>- [ ] &nbsp;</li></ul> |
